@@ -3,7 +3,7 @@ import numpy as np
 
 
 def load_dataset():
-   df=pd.read_csv("./data/raw/housing.csv")
+   df=pd.read_csv("../data/raw/housing.csv")
    return df
 
 #Fill missing value
@@ -25,5 +25,5 @@ if __name__=="__main__":
    df_encoded=get_dummies_data(df)
    df_encoded.set_index('longitude', inplace=True)
    print(df_encoded.columns)
-   df_encoded.to_csv('./data/processed/clean_data.csv')
+   df_encoded.to_csv('../data/processed/clean_data.csv')
    

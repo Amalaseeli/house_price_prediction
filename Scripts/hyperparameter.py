@@ -5,7 +5,7 @@ import json
 import os
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
-from model_bulding import scale_data, split_data
+from model_building import scale_data, split_data
 from sklearn.linear_model import SGDRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
@@ -55,10 +55,6 @@ if __name__ == "__main__":
     # }
     forest=RandomForestRegressor()
 
-    # model=LinearRegression()
-    # parameter_grid={
-
-    # }
     parameter_grid={
     'n_estimators':[100,150, 200],
     'max_depth':[None,10,20,30],
@@ -69,8 +65,8 @@ if __name__ == "__main__":
     print(best_params)
     print(model_performance)
     
-    folder="results"
-    os.makedirs(folder/{model_name})
+    folder=f"results/{model_name}"
+    os.makedirs(folder, exist_ok=True)
    
     save_model(folder, best_params, model_performance, model_name)
 
